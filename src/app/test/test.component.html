@@ -1,0 +1,16 @@
+
+<p>Welcome to Expertz Lab</p>
+
+
+<select name="" id=""  (click)="choice=$event.target.value;test()">
+<option *ngFor="let color of colors" >
+    {{color}}</option>
+</select>
+<div *ngFor="let color of colors">
+    {{color}} 
+
+</div>
+<p [ngStyle]="{'color':choice}">
+    Welcome to Expertz Lab
+</p>
+<p [ngClass]="disabled=='false'?'disabledBlue':'activeBlue'">Heloooooo Suman</p>
