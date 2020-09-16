@@ -19,14 +19,17 @@ export class ProductentryComponent implements OnInit {
   }
   SaveDataToLocalStorage(str) {
     this.prod.push(str);
-    localStorage.setItem('product', JSON.stringify(this.prod));
+    for(let i=0;i<this.prod.length-1;i++)
+    localStorage.setItem('"product"i', JSON.stringify(this.prod[i]));
     this.model = new Product("", "", "", "");
-  }
+}
   showData()
   {
     console.log("The Products in Local Storage are......")
-    console.log(localStorage.getItem('product'))
-    //alert("Products are:\n"+this.prod)
+    for(let j=1;j<=5;j++){
+    console.log("NEWPRODUCT:",localStorage.getItem("product"+j))
+  }
+  
     document.getElementById("show").innerText="Products are:\n"+this.prod
   }
 

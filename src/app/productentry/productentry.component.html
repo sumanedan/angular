@@ -1,10 +1,10 @@
-<form action="" class="form-group">
+<form action="" class="form-group" #myform="ngForm">
     <div class="form-group">
         <label for="">Pid</label>
     </div>
     <div>
         <input type="text" class="form-control" #pid="ngModel" [(ngModel)]="model.id" name="id" required>
-        <div *ngIf="pid.invalid && (pid.dirty || pid.touched)">
+        <div *ngIf="pid.invalid && (pid.dirty || pid.touched)" class="alert alert-danger">
             ID Field cant be empty
         </div>
     </div>
@@ -13,25 +13,35 @@
 
     </div>
     <div>
-        <input type="text" class="form-control" [(ngModel)]="model.name" name="name" required>
+        <input type="text" class="form-control" #name="ngModel" [(ngModel)]="model.name" name="name" required>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            Name Field cant be empty
+        </div>
     </div>
     <div class="form-group">
         <label for="">Price</label>
 
     </div>
     <div>
-        <input type="text" class="form-control" [(ngModel)]="model.price" name="price" required>
+        <input type="text" class="form-control" #price="ngModel" [(ngModel)]="model.price" name="price" required>
+        <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
+            Price Field cant be empty
+        </div>
     </div>
     <div class="form-group">
         <label for="">Description</label>
 
     </div>
     <div>
-        <input type="text" class="form-control" [(ngModel)]="model.description" name="description" required>
+        <input type="text" class="form-control" #description="ngModel" [(ngModel)]="model.description"
+            name="description">
+        <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+            Description Field cant be empty
+        </div>
     </div>
-    <button class="btn btn-primary" (click)=saveProduct()>Save</button>
+    <button class="btn btn-primary" (click)=saveProduct() [disabled]="myform.invalid">Save</button>
     <button class="btn btn-primary" (click)=showData()>View</button>
-<div class="form-group showData" id="show" style=width:700px;height:200px;background-color:rosybrown>
+    <div class="form-group showData" id="show" style=width:700px;height:200px;background-color:rosybrown>
 
-</div>
+    </div>
 </form>

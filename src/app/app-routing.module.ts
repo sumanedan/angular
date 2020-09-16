@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
 import { ProductentryComponent } from './productentry/productentry.component';
 import { TestComponent } from './test/test.component';
 
@@ -20,7 +21,11 @@ const routes: Routes = [
 {
   path:"registration",
   component:ProductentryComponent
-}
+},
+{
+  path:"editor",
+  component:NameEditorComponent
+},
 ];
 
 @NgModule({
