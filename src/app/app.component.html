@@ -15,6 +15,9 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/registration">Add Product</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/view">View</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
@@ -52,10 +55,37 @@
 <p [ngStyle]="{'color':'red'}">welcome</p>
 <app-name-editor>
   
-</app-name-editor>-->
+</app-name-editor>
 <app-store>
   
 </app-store>
-<router-outlet>
+<app-test>
+
+</app-test>
+<app-data>
+  
+</app-data>
+<app-animations>
+
+</app-animations>
+<app-imageanimations>
+
+</app-imageanimations>
+<app-employee></app-employee>
+<app-material></app-material>
+<app-registration></app-registration>
+<app-productlist></app-productlist>
+<app-parent></app-parent>-->
+<app-react></app-react>
+
+<div [@routeAnimations]="prepareRoute(outlet)">
+<router-outlet #outlet=outlet>
 
 </router-outlet>
+</div>
+<p [appHighlight]="color" default="orange">Welcome</p>
+Red<input type="radio" (click)="color='red'">
+Green<input type="radio" (click)="color='green'">
+Pink<input type="radio" (click)="color='pink'">
+<app-userlist></app-userlist>
+<app-fileupload></app-fileupload>

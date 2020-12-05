@@ -1,0 +1,33 @@
+[
+    {
+        "pid":101,
+        "name":"Book",
+        "price":1000,
+        "description":"Product Book"
+    },
+    {
+        "pid":102,
+        "name":"Pencil",
+        "price":1000,
+        "description":"Product Pencil"
+    },
+    {
+        "pid":103,
+        "name":"Pen",
+        "price":1000,
+        "description":"Product Pen"
+    },
+    {
+        "pid":104,
+        "name":"Scale",
+        "price":1000,
+        "description":"Product Scale"
+    },
+    {
+        "pid":105,
+        "name":"eraser",
+        "price":1000,
+        "description":"Product eraser"
+    }
+
+]

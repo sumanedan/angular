@@ -1,0 +1,11 @@
+<ul>
+    <li *ngFor="let item of elist|paginate:{
+        itemsPerPage:5,currentPage:p}">
+        {{item.id}}
+        {{item.code}}
+        {{item.salary}}
+    </li>
+</ul>
+<pagination-controls (pageChange)='p=$event'>
+
+</pagination-controls>

@@ -1,0 +1,5 @@
+<button (click)="add()">Add User</button>
+<button (click)="remove()">Remove User</button>
+<app-user *ngFor="let i of userlist" [users]="i">
+    {{i.username}}
+</app-user>

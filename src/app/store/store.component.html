@@ -1,15 +1,31 @@
-<form [formGroup]="storeForm">
+<form [formGroup]="storeForm" (ngSubmit)="register()">
     <div class="form-group">
         <label>Storeid</label>
     </div>
     <div>
         <input type="text" class="form-control" formControlName="storeid">
+    <div *ngIf="submitted && f.storeid.errors" class="alert alert-danger" role="alert">
+        <div *ngIf="f.storeid.errors.required">
+            storeid is required
+        </div>
+        <div *ngIf="f.storeid.errors.maxlength">
+            length should be less than or equal to 3
+        </div>
+    </div>
     </div>
     <div class="form-group">
         <label>Name</label>
     </div>
     <div>
         <input type="text" class="form-control" formControlName="name">
+        <div *ngIf="submitted && f.name.errors" class="alert alert-danger" role="alert">
+            <div *ngIf="f.name.errors.required">
+                name is required
+            </div>
+            <div *ngIf="f.name.errors.pattern">
+                invalid name format
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <label>Gstno</label>
@@ -38,6 +54,8 @@
             <input type="text" class="form-control" formControlName="pin">
         </div>
     </div>
-    <button (click)="register()">save</button>
+    <!--<button (click)="register()">save</button>
     Form Status{{storeForm.status}}
-</form>
+</form>-->
+<button>save</button>
+<button (click)=reset()>reset</button>
